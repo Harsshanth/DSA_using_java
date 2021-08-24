@@ -4,18 +4,23 @@ public class bubbleSort {
 
     static public void bubbleSortFunc(int[] arr){
         int temp;
+        boolean swapped;
         
         for(int i=0 ;i<arr.length;i++){
-            
-            for(int j=i+1;j<arr.length;j++){
+            swapped = false;
+            for(int j=1;j<arr.length-i;j++){
                 if(arr[j]<arr[j-1]){
                    temp= arr[j];
                    arr[j]=arr[j-1];
                    arr[j-1]=temp;
-                   
-                }
-                
+                   swapped = true;
+                }  
             }
+            for(int k=0;k<arr.length;k++){
+                System.out.print(arr[k]);
+            }
+            System.out.println();
+            if(!swapped) break;
             
         }
         for(int i=0;i<arr.length;i++){
@@ -30,3 +35,7 @@ public class bubbleSort {
     }
     
 }
+
+// 3 4 1 5
+
+// 3 4 1 5; 3 1 4 5; 3 1 4 5;
