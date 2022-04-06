@@ -34,6 +34,10 @@ public class Stack {
         top.next = null;
     }
 
+    public void peek() {
+        System.out.println(top.value);
+    }
+
     public boolean search(int value) {
         Node temp = top;
         while(temp != null) {
@@ -65,6 +69,7 @@ public class Stack {
         System.out.println();
         stack.display();
         System.out.println("\n" + stack.search(6));
+        stack.peek();
 
     }
 
