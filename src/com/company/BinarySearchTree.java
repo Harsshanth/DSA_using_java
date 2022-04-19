@@ -17,7 +17,7 @@ public class BinarySearchTree  {
     public void insertmap(int value) {
         root = insert(value , root);
     }
-    public Node insert (int value, Node root) {
+    private Node insert (int value, Node root) {
 
         if(root == null){
             root = new Node(value);
@@ -32,11 +32,28 @@ public class BinarySearchTree  {
         return root;
     }
 
+    public boolean searchMap(int value){
+        Node temp = null;
+        temp = search(root,value);
+        if(temp != null)
+            return true;
+        return false;
+    }
+    private Node search(Node root , int value){
+        if(root == null || root.value == value)
+            return root;
+        if(root.value > value)
+            return search(root.left , value);
+        else
+            return search(root.right , value);
+    }
+
+
     public void inorderDisplayMap () {
         inorderDisplay(root);
     }
 
-    public void inorderDisplay(Node temp) {
+    private void inorderDisplay(Node temp) {
         if(temp != null){
             inorderDisplay(temp.left);
             System.out.print(temp.value + " --> ");
@@ -52,6 +69,7 @@ public class BinarySearchTree  {
         tree.insertmap(3);
         tree.insertmap(8);
         tree.inorderDisplayMap();
+        System.out.println(tree.searchMap(8));
 
     }
 
