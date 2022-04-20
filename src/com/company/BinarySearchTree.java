@@ -48,6 +48,38 @@ public class BinarySearchTree  {
             return search(root.right , value);
     }
 
+    public void deleteMap(int value) {
+        delete(value,root);
+    }
+
+    private Node delete(int value,Node root){
+        if(root == null)
+            return root;
+        if(root.value < value) {
+            root.right = delete(value,root.right);
+        } else if(root.value > value) {
+            root.left = delete(value,root.left);
+        }else {
+//            Root with 1 child
+            if(root.left == null)
+                return root.right;
+            else if(root.right == null)
+                return root.left;
+//            Root with 2 child
+            root.value =minValue(root.right);
+            root.right = delete(root.value, root.right);
+        }
+        return root;
+    }
+
+    private int minValue(Node root){
+        int min = root.value;
+        while(root.left != null) {
+            min = root.left.value;
+            root = root.left;
+        }
+        return min;
+    }
 
     public void inorderDisplayMap () {
         inorderDisplay(root);
@@ -70,6 +102,8 @@ public class BinarySearchTree  {
         tree.insertmap(8);
         tree.inorderDisplayMap();
         System.out.println(tree.searchMap(8));
+        tree.deleteMap(4);
+        tree.inorderDisplayMap();
 
     }
 
