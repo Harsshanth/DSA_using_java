@@ -8,7 +8,6 @@ public class StringNumber {
         int count = 0;
 
         for(int i = 0; i < str.length();  ) {
-
             if(Character.isAlphabetic(str.charAt(i))) {
                 count = 0;
                 ch = str.charAt(i);
