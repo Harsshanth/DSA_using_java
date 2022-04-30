@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.zoho.utils;
+
 public class bubbleSort {
 
     static public void bubbleSortFunc(int[] arr){
@@ -16,9 +18,9 @@ public class bubbleSort {
                    swapped = true;
                 }  
             }
-            for(int k=0;k<arr.length;k++){
-                System.out.print(arr[k]);
-            }
+//            for(int k=0;k<arr.length;k++){
+//                System.out.print(arr[k]);
+//            }
             System.out.println();
             if(!swapped) break;
             
@@ -30,8 +32,12 @@ public class bubbleSort {
     }
 
     public static void main(String[] args) {
+        utils u = new utils();
         int[] arr = {5,2,4,1,3};
-        bubbleSortFunc(arr);
+        arr = u.reverse(arr);
+        for(int x : arr) {
+            System.out.println(x);
+        }
     }
     
 }
