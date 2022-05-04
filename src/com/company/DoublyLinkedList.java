@@ -1,6 +1,7 @@
 package com.company;
 import java.util.*;
-public class DoublyLinkedList {
+public class
+DoublyLinkedList {
     private Node head;
     private Node tail;
     private int size = 0;
