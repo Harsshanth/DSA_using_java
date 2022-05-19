@@ -7,7 +7,6 @@ public class bubbleSort {
     static public void bubbleSortFunc(int[] arr){
         int temp;
         boolean swapped;
-        
         for(int i=0 ;i<arr.length;i++){
             swapped = false;
             for(int j=1;j<arr.length-i;j++){

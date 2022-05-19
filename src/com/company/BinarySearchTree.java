@@ -104,7 +104,5 @@ public class BinarySearchTree  {
         System.out.println(tree.searchMap(8));
         tree.deleteMap(4);
         tree.inorderDisplayMap();
-
     }
-
 }
